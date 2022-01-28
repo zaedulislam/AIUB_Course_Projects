@@ -1,0 +1,12 @@
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\HireABook.Entity.dll.config
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\HireABook.Entity.dll
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\HireABook.Entity.pdb
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\EntityFramework.dll
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\EntityFramework.SqlServer.dll
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\EntityFramework.xml
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\bin\Debug\EntityFramework.SqlServer.xml
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\obj\Debug\HireABook.Entity.csprojAssemblyReference.cache
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\obj\Debug\HireABook.Entity.csproj.CoreCompileInputs.cache
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\obj\Debug\HireABook.Entity.csproj.CopyComplete
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\obj\Debug\HireABook.Entity.dll
+E:\Workstation\ASP.net\Hire_A_Book\HireABook.Entity\obj\Debug\HireABook.Entity.pdb

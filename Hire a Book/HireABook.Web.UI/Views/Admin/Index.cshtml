@@ -1,0 +1,89 @@
+﻿@model List<HireABook.Entity.BookInfo>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<head>
+    <!-- Bootstrap -->
+    <link href="/content/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/content/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/content/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="/content/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="/content/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/content/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/content/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/content/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/content/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/content/build/css/custom.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="/content/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/content/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="/content/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/content/vendors/nprogress/nprogress.js"></script>
+    <!-- iCheck -->
+    <script src="/content/vendors/iCheck/icheck.min.js"></script>
+    <!-- Datatables -->
+    <script src="/content/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/content/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/content/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/content/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="/content/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/content/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/content/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/content/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/content/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/content/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/content/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/content/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="/content/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/content/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/content/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="/content/build/js/custom.min.js"></script>
+</head>
+<div class="x_content">
+    <h4 class="text-muted font-13 m-b-30">
+        Recently Posted
+    </h4>
+    <table id="datatable" class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Book Title</th>
+                <th>Author Name</th>
+                <th>ISBN</th>
+                <th>Edition</th>
+                <th>Genre Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var value = item.IsApproved == true ? "Approved" : "Disapproved";
+                var btClass = item.IsApproved == true ? "btn-success" : "btn-danger";
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.BookTitle</td>
+                    <td>@item.AuthorName</td>
+                    <td>@item.ISBN</td>
+                    <td>@item.Edition</td>
+                    <td>@item.GenreName</td>
+                    <td><a href="/Admin/ChangeBookApprove/@item.BookId"><input type="button" class="btn @btClass" name="name" value="@value" id-val="@item.BookId" /></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

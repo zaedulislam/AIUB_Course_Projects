@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "ShowMyProfile";
+}
+
+@model HireABook.Entity.UserInfo
+
+<style>
+    .col-xs-6 {
+        width: 50%;
+        float: left;
+        padding: 5px;
+    }
+
+    .img-circle {
+        border-radius: 50%;
+    }
+
+    label {
+        margin-bottom: -1.5rem;
+    }
+</style>
+<div class="container bootstrap snippet">
+    <div class="row">
+        <div class="col-sm-10"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <!--left col-->
+            <h1 align="center">@Model.UserName</h1>
+            <div class="text-center">
+                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                <br><br>
+                <h6>Upload a different photo...</h6>
+                <input type="file" class="text-center center-block file-upload">
+            </div>
+
+            <br>
+
+            <ul class="list-group" style="margin-bottom:35px">
+                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+            </ul>
+
+
+        </div><!--/col-3-->
+        <div class="col-sm-9">
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home">
+
+                    <form class="form" action="/User/UpdateProfile" method="post" id="registrationForm">
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="UserName"><h4>User Name</h4></label>
+                                <input type="text" class="form-control" name="UserName" id="UserName" value="@Model.UserName" placeholder="user Name" title="enter your user name." disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="email"><h4>Email</h4></label>
+                                <input type="email" class="form-control" name="email" id="email" value="@Model.Email" placeholder="you@email.com" title="enter your email." disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="firstName"><h4>First Name</h4></label>
+                                <input type="text" class="form-control" name="firstName" id="firstName" value="@Model.FirstName" placeholder="enter first name" title="enter your first name.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="lastName"><h4>Last Name</h4></label>
+                                <input type="text" class="form-control" name="lastName" id="lastName" value="@Model.LastName" placeholder="enter last name" title="enter your last name.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="phone"><h4>Phone</h4></label>
+                                <input type="number" class="form-control" name="phoneNo" id="phone" value="@Model.PhoneNo" placeholder="enter phone" title="enter your phone number.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="password"><h4>Password</h4></label>
+                                <input type="password" class="form-control" name="password" id="password" value="@Model.Password" placeholder="password" title="enter your password.">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="city"><h4>City</h4></label>
+                                <input type="city" class="form-control" name="city" id="city" value="@Model.City" placeholder="enter a city" title="enter a city">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="thana"><h4>Thana</h4></label>
+                                <input type="thana" class="form-control" name="thana" id="thana" value="@Model.Thana" placeholder="enter a thana" title="enter a thana">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="area"><h4>Area</h4></label>
+                                <input type="area" class="form-control" name="area" id="area" value="@Model.Area" placeholder="enter a area" title="enter a area">
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col-xs-6">
+                                <label for="createdDate"><h4>Created Date</h4></label>
+                                <input type="createdDate" class="form-control" name="createdDate" value="@Model.CreatedDate" id="createdDate" placeholder="somewhere" title="enter a location" disabled="disabled">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-12" style="float:right">
+                                <br>
+                                <button class="btn btn-md btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                <button class="btn btn-md" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div><!--/tab-pane-->
+                
+
+            </div><!--/tab-pane-->
+        </div><!--/tab-content-->
+    </div><!--/col-9-->
+</div><!--/row-->

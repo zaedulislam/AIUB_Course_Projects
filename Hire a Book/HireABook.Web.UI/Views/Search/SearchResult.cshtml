@@ -1,0 +1,63 @@
+﻿@model List<HireABook.Entity.BookInfo>
+
+@{
+    ViewBag.Title = "SearchResult";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align:center;">Search Result</h2>
+        <hr>
+        <table class="table table-condensed">
+            <tr>
+                <th>SL No</th>
+                <th>Book Title</th>
+                <th>Genre</th>
+                <th>Author Name</th>
+                <th>Edition</th>
+                <th>Price</th>
+                <th>Added By</th>
+                <th>Upload Date</th>
+                <th>Status</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BookId</td>
+                    <td>@item.BookTitle</td>
+                    <td>@item.GenreName</td>
+                    <td>@item.AuthorName</td>
+                    <td>@item.Edition</td>
+                    <td>@item.OriginalPrice</td>
+                    <td>@item.AddedBy</td>
+                    <td>@item.UploadDate</td>
+                    <td>@item.IsApproved</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

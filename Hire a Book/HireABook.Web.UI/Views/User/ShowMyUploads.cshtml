@@ -1,0 +1,62 @@
+﻿@model List<HireABook.Entity.BookInfo>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align:center;">Posted Books</h2>
+        <hr>
+        <table class="table table-condensed">
+            <tr>
+                <th>SL No</th>
+                <th>Book Title</th>
+                <th>Genre</th>
+                <th>Author Name</th>
+                <th>Edition</th>
+                <th>Original Price</th>
+                <th>Borrow Price</th>
+                <th>Added By</th>
+                <th>Upload Date</th>
+                <th>Status</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                var IsApproved = item.IsApproved == true ? "Approved" : "Not Approved Yet";
+            <tr>
+                <td>@item.BookId</td>
+                <td>@item.BookTitle</td>
+                <td>@item.GenreName</td>
+                <td>@item.AuthorName</td>
+                <td>@item.Edition</td>
+                <td>@item.OriginalPrice</td>
+                <td>@item.BorrowPrice</td>
+                <td>@item.AddedBy</td>
+                <td>@item.UploadDate</td>
+                <td>@IsApproved</td>
+            </tr>
+            }
+
+        </table>
+        </div>
+</body>
+</html>

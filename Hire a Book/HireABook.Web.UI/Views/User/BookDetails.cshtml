@@ -1,0 +1,65 @@
+﻿@model HireABook.Entity.BookInfo
+<div class="container">
+    <div class="col-md-12">
+        <div class="row" id="productMain">
+            <div class="col-sm-6">
+                <div id="mainImage">
+                    <img src="@Model.FrontCover" alt="" class="img-responsive" width="350" height="350">
+                </div>
+
+                @*<div class="ribbon sale">
+                    <div class="theribbon">SALE</div>
+                    <div class="ribbon-background"></div>
+                </div>
+                 /.ribbon 
+
+                <div class="ribbon new">
+                    <div class="theribbon">NEW</div>
+                    <div class="ribbon-background"></div>
+                </div>*@
+                <!-- /.ribbon -->
+
+            </div>
+            <div class="col-sm-6">
+                <div class="box">
+                    <h1 class="text-center">@Model.BookTitle</h1>
+                    <h3 style="text-align: center">Genre : @Model.GenreName</h3>
+                    <h3 style="text-align: center; color:lightseagreen">By @Model.AuthorName</h3>
+                    <h4 style="text-align: center">@Model.Edition Edition</h4>
+                    <p class="price" style="text-align: center">@Model.OriginalPrice Tk</p>
+                    <a href="/Book/BorrowBook/@Model.BookId"><input type="button" name="name" value="Borrow" class="btn btn-secondary" style="text-align: center" /></a>
+                    <p class="goToDescription"><a href="#details" class="scroll-to">See The Contact Information if you want to buy this book</a></p>
+
+                </div>
+
+                @*<div class="row" id="thumbs">
+                    <div class="col-xs-4">
+                        <a href="@Model.FrontCover" class="thumb">
+                            <img src="@Model.FrontCover" alt="" class="img-responsive">
+                        </a>
+                    </div>
+                </div>*@
+            </div>
+
+        </div>
+
+
+        <div class="box" id="details">
+            <p>
+                <h4>Posted By</h4>
+                <h5 style="margin-left: 25px; color:lightseagreen"><b>@Model.UserName</b></h5>
+                @*<h4>Location</h4>
+                        <blockquote>
+                    <p>
+                        <em>@Model., {{$info->users->thana}}, {{$info->users->area}}</em>
+                    </p>*@
+                @*</blockquote>
+                    <h4>Contact Informations</h4>
+                    <ul>
+                        <li>+88{{$info->users->phoneNo}}</li>
+                        <li>{{$info->users->email}}</li>
+                    </ul>*@
+                <hr>
+        </div>
+    </div>
+</div>
